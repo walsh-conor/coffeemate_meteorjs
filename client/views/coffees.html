@@ -1,0 +1,10 @@
+<template name="coffees">
+  <h2 class="text-center">View All Coffees</h2>
+  <table class="table">
+    <tbody>
+    {{#each coffees}}
+      {{> coffee}}
+    {{/each}}
+    </tbody>
+    </table>
+</template>

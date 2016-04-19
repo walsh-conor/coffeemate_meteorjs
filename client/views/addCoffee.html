@@ -1,0 +1,31 @@
+<template name="addCoffee">
+  <h2 class="text-center">Add Coffee</h2>
+  <p class="text-center">Enter your coffee details below...</p>
+
+ <form class="form-horizontal new-coffee">
+        <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Name" required />
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="price" class="col-sm-2 control-label">Price</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" name="price" id="price" placeholder="Price" min="0" step="0.01" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="shop" class="col-sm-2 control-label">Shop</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="shop" name="shop" placeholder="Shop"  />
+            </div>
+          </div>
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default" value="Signup">Submit</button>
+            </div>
+        </form>
+</template>
+
+
+ 
