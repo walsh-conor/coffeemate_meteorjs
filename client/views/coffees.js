@@ -2,6 +2,10 @@ Template.coffees.helpers({
   coffees: Coffees.find({}, {sort: {rating: -1}})
 });
 
+Template.searchBox.helpers({
+  coffeesIndex: () => CoffeesIndex
+});
+
 
 Template.addCoffee.events({
     "submit .new-coffee": function (event) {
@@ -38,10 +42,10 @@ Template.editCoffee.events({
       var starrating = $('#rating').data('userrating');
 
 
-      var map = document.getElementById('map');
-      var marker = $('#map').data('latLng');
+      // var map = document.getElementById('map');
+      // var marker = $('#map').data('latLng');
 
-      console.log(marker)
+      // console.log(marker)
 
     // Insert a coffee into the collection
      Meteor.call("editCoffee", coffeeToEdit, name, price, shop, starrating);
@@ -51,6 +55,24 @@ Template.editCoffee.events({
       event.target.price.value = "";
       event.target.shop.value = "";
       Router.go('coffees');
+    },
+    "click .favourite-star": function () {
+    coffeeToEdit = this._id;
+    favourite = this.favourite;
+
+    if(favourite == true)
+    {
+      favourite = false;
+      Meteor.call("favouriteCoffee", coffeeToEdit, favourite);
+       console.log("turn to false")
+    }
+    else {
+      favourite = true;
+      Meteor.call("favouriteCoffee", coffeeToEdit, favourite);
+       console.log("turn to true")
+
+    }
+          
     }
   });
   

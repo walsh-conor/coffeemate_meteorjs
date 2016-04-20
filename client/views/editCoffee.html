@@ -1,6 +1,12 @@
 <template name="editCoffee">
   <h2 class="text-center">Edit Coffee</h2>
 
+{{#if favourite}}
+  <span id="favourite-star" class="favourite-star glyphicon glyphicon-star" style="color: orange"  ></span>
+{{else}}
+  <span id="favourite-star" class="favourite-star glyphicon glyphicon-star" style="color: black"  ></span>
+{{/if}}
+
  <form class="form-horizontal edit-coffee">
         <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Name</label>

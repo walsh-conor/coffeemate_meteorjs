@@ -7,3 +7,10 @@
   max-width: 100%;
   height: 300px;
 }
+
+.favourite-star {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+}

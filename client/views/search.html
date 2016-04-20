@@ -1,0 +1,6 @@
+<template name="searchBox">
+    Search Coffees: {{> EasySearch.Input index=coffeesIndex }}
+        {{#EasySearch.Each index=coffeesIndex }}
+            {{> coffee}}
+        {{/EasySearch.Each}}
+</template>
